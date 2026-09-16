@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Birthday Shweta ❤️</title>
+  <style>
+    * { box-sizing: border-box; }
+    html, body {
+      margin: 0;
+      padding: 0;
+      min-height: 100%;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4, #ffd1dc);
+      color: #fff;
+      text-align: center;
+      overflow-x: hidden;
+    }
+
+    .container {
+      padding: 25px 18px 60px;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      margin: 20px 0 10px;
+      letter-spacing: 0.5px;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.15);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-radius: 22px;
+      padding: 18px;
+      margin: 20px auto;
+      max-width: 560px;
+      box-shadow: 0 12px 30px rgba(255, 98, 140, 0.16);
+    }
+
+    .photo-box {
+      position: relative;
+      width: 100%;
+      min-height: 360px;
+      border-radius: 18px;
+      overflow: hidden;
+      background: rgba(255,255,255,0.1);
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 18px;
+      display: none;
+      transition: opacity 0.8s ease;
+    }
+
+    img.active {
+      display: block;
+      animation: fadeIn 0.8s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.98); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    .quote {
+      min-height: 72px;
+      margin: 18px 8px 8px;
+      font-size: clamp(1.1rem, 2.6vw, 1.8rem);
+      font-weight: bold;
+      color: #fff3f7;
+      line-height: 1.5;
+    }
+
+    .message {
+      text-align: left;
+      line-height: 1.8;
+      font-size: 1.1rem;
+      color: #fffafc;
+    }
+
+    .message p {
+      margin: 0 0 8px;
+    }
+
+    .from {
+      margin-top: 18px;
+      font-size: 1.15rem;
+      font-weight: bold;
+      color: #fff7fa;
+    }
+
+    .heart {
+      position: fixed;
+      font-size: 20px;
+      animation: float 6s linear infinite;
+      opacity: 0.8;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(100vh) scale(0.8); opacity: 0; }
+      10% { opacity: 0.8; }
+      100% { transform: translateY(-120px) scale(1.3); opacity: 0; }
+    }
+
+    button {
+      border: none;
+      border-radius: 30px;
+      background: #fff;
+      color: #ff4f7b;
+      font-size: 1rem;
+      font-weight: 700;
+      padding: 14px 24px;
+      cursor: pointer;
+      margin-top: 18px;
+      box-shadow: 0 8px 20px rgba(255,255,255,0.25);
+      transition: transform 0.2s ease;
+    }
+
+    button:hover {
+      transform: translateY(-2px) scale(1.02);
+    }
+
+    audio {
+      display: none;
+    }
+
+    @media (max-width: 480px) {
+      .card {
+        padding: 14px;
+      }
+      .photo-box {
+        min-height: 280px;
+      }
+      .message {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🎂 Happy Birthday Shweta ❤️</h1>
+
+    <div class="card">
+      <div class="photo-box">
+        <img class="active" src="https://ourmoments.live/wp-content/uploads/om-photos/om_570298c1b61ff2b97ed86d93a16c690d_1789578351.webp" alt="Shweta birthday image 1" />
+        <img src="https://ourmoments.live/wp-content/uploads/om-photos/om_65d8750b4fd3ecbec7c8149e9ce7d3b6_1789581148.webp" alt="Shweta birthday image 2" />
+        <img src="https://ourmoments.live/wp-content/uploads/om-photos/om_e18f51faf576091756effcdf46852795_1789581151.webp" alt="Shweta birthday image 3" />
+        <img src="https://ourmoments.live/wp-content/uploads/om-photos/om_8dc9e83e7d086e4a25ba7b45add31a77_1789581157.webp" alt="Shweta birthday image 4" />
+        <img src="https://ourmoments.live/wp-content/uploads/om-photos/om_51ad8bf6bc29b163dce3f7780f3afe1d_1789581157.webp" alt="Shweta birthday image 5" />
+      </div>
+      <div class="quote" id="quote"></div>
+    </div>
+
+    <div class="card message">
+      <p><strong>Happy Birthday, Shweta.</strong></p>
+      <p>May your day be as beautiful, warm, and unforgettable as your smile.</p>
+      <p>You bring joy, kindness, grace, and positivity to everyone around you, and that makes you truly special.</p>
+      <p>May this new year bring you endless laughter, peace, success, and all the happiness your heart deserves.</p>
+      <p>Keep shining, keep believing in yourself, and keep spreading the light you carry so effortlessly.</p>
+      <p>Wishing you a year filled with love, memorable moments, and dreams turning into reality. ❤️</p>
+      <div class="from">— With love, Sejal 💖</div>
+    </div>
+
+    <button id="musicButton" type="button">🎵 Play Music</button>
+    <audio id="music" loop>
+      <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg" />
+    </audio>
+  </div>
+
+  <script>
+    const quotes = [
+      "The world is brighter with you in it. 💖",
+      "May your heart always stay light. ✨",
+      "Keep shining, beautiful soul. 🌸",
+      "May this year bring endless smiles. 🌷",
+      "You deserve all the happiness in the world. ❤️"
+    ];
+
+    let q = 0;
+    const quote = document.getElementById("quote");
+    quote.innerHTML = quotes[0];
+
+    setInterval(() => {
+      q = (q + 1) % quotes.length;
+      quote.innerHTML = quotes[q];
+    }, 3000);
+
+    const images = document.querySelectorAll("img");
+    let i = 0;
+    setInterval(() => {
+      images[i].classList.remove("active");
+      i = (i + 1) % images.length;
+      images[i].classList.add("active");
+    }, 2500);
+
+    setInterval(() => {
+      const heart = document.createElement("div");
+      heart.className = "heart";
+      heart.innerHTML = "❤️";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.fontSize = (15 + Math.random() * 25) + "px";
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 6000);
+    }, 350);
+
+    const music = document.getElementById("music");
+    const musicButton = document.getElementById("musicButton");
+
+    let musicStarted = false;
+    musicButton.addEventListener("click", () => {
+      if (!musicStarted) {
+        music.play();
+        musicStarted = true;
+        musicButton.textContent = "🎵 Music On";
+      } else {
+        music.pause();
+        musicStarted = false;
+        musicButton.textContent = "🎵 Play Music";
+      }
+    });
+  </script>
+</body>
+</html>
